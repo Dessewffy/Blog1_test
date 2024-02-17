@@ -9,7 +9,7 @@ class TestBlog():
         options = Options()
         options.add_experimental_option("detach", True)
         options.add_argument('--headless')
-        self.page =  webdriver.Chrome(options=options)
+        self.page =  Blog(webdriver.Chrome(options=options))
         self.page.get(URL)
         self.page.maximize_window()
        
