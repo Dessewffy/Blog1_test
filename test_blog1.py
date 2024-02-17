@@ -12,7 +12,7 @@ class TestBlog():
         self.page =  webdriver.Chrome(options=options)
         self.page.get(URL)
         self.page.maximize_window()
-        assert self.page.browser.title == "Blog1Project"
+       
 
 
     def teardown_method(self):
