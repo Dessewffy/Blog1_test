@@ -1,12 +1,19 @@
-import configuration as config
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from POM import Blog
 
 
 class TestBlog():
     def setup_method(self):
-        self.page = Blog(config.get_preconfigured_chrome_driver())
-        self.page.open()
+        URL = 'http://ec2-3-120-40-183.eu-central-1.compute.amazonaws.com/'
+        options = Options()
+        options.add_experimental_option("detach", True)
+        options.add_argument('--headless')
+        self.page =  webdriver.Chrome(options=options)
+        self.page.get(URL)
+        self.page.maximize_window()
         assert self.page.browser.title == "Blog1Project"
+
 
     def teardown_method(self):
          self.page.close()
