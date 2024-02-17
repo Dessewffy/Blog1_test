@@ -26,6 +26,6 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m pytest path/to/your/test/file.py  # A tesztfájl helye
+        pytest path/to/your/test/test_blog1.py # A tesztfájl helye
 
 
