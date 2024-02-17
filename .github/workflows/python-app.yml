@@ -1,18 +1,16 @@
-name: CI
+name: Python Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]  # Fő ágra push események figyelése
   pull_request:
-    branches:
-      - main
+    branches: [ "main" ]  # Fő ágra pull request események figyelése
 
 jobs:
   test:
-    name: Run tests
+    name: Run Python tests
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -20,13 +18,14 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # Vagy a Python verziója, amit használni szeretnél
 
     - name: Install dependencies
       run: |
-        pip install selenium
+        pip install -r path/to/requirements.txt  # A telepítendő követelmények fájlja
 
     - name: Run tests
       run: |
-        python -m pytest path/to/your/test/file.py
+        python -m pytest path/to/your/test/file.py  # A tesztfájl helye
+
 
