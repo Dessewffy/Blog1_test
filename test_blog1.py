@@ -8,10 +8,11 @@ class TestBlog():
         self.page.open()
         assert self.page.browser.title == "Blog1Project"
 
+
     def teardown_method(self):
          self.page.close()
 
-# Regisztrációnak a tesztjei
+    # Regisztrációnak a tesztjei
     def test_registration_valid(self):
         self.page.registration_li().click()
 
@@ -40,7 +41,7 @@ class TestBlog():
         assert s_btn.is_displayed()
 
         s_btn.click()
-# regisztráció invalid adatokkal
+    # regisztráció invalid adatokkal
     def test_registration_invalid(self):
         self.page.registration_li().click()
 
@@ -63,6 +64,8 @@ class TestBlog():
 
         s_btn = self.page.submit_btn()
         assert s_btn != s_btn.is_displayed()
+
+
 
     def test_log_in_valid(self):
         self.page.log_in_link().click()
