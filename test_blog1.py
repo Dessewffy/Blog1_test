@@ -31,7 +31,7 @@ class TestBlog():
 
         # CI/CD-nél nem fog működni
         img_path = 'C:/Users/benja/Downloads/800px-Barabás_dessewffy_emil.jpg'
-        self.page.reg_file_upload().send_keys(img_path)
+       # self.page.reg_file_upload().send_keys(img_path)
 
         self.page.conf_password_input().send_keys("Dessewffy1842@")
 
