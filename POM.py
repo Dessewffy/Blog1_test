@@ -1,8 +1,6 @@
-from datetime import datetime
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+
 
 
 class Blog:
@@ -43,6 +41,9 @@ class Blog:
 
     def conf_password_input(self):
         return self.browser.find_element(By.XPATH, '//input[@id="confirmPassword"]')
+
+    def reg_file_upload(self):
+        return self.browser.find_element(By.ID, 'image')
 
     def submit_btn(self):
         return self.browser.find_element(By.XPATH, '//button[@id="submitButton"]')
